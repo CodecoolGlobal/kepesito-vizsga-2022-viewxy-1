@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
     BasicSelectPage basicSelectPage;
+    BootstrapModalPage bootstrapModalPage;
+    DataListFilterPage dataListFilterPage;
+    TableDataDownloadPage tableDataDownloadPage;
 
     /*
     Tölts be a böngészőbe az alábbi oldalt: https://demo.seleniumeasy.com/basic-first-form-demo.html
@@ -48,7 +51,16 @@ public class SeleniumTest extends TestBase {
     Írj tesztesetet a mellékelt dokumentumban, majd a tesztlépések alapján írj automatizált tesztet. A tesztesetben ellenőrizd a modal alert ablak szöveges tartalmát összahasonlítva egy általad definiált elvárt eredménnyel. Nyisd meg a Single Modal ablakot, tárolt el az ablakon megjelenő szöveget egy változóba és zárd be az ablakot a bezárás gombbal
      */
     @Test
-    public void AlertTest() {
+    public void AlertTest() throws InterruptedException {
+        bootstrapModalPage = new BootstrapModalPage(driver);
+        bootstrapModalPage.bootstrapModalNavigate();
+        bootstrapModalPage.clickLaunchModalButton();
+        String expected = "";
+        String actual = bootstrapModalPage.getAlertResult();
+        Thread.sleep(500);
+        bootstrapModalPage.clickCloseButton();
+
+        Assertions.assertEquals(expected, actual);
     }
 
     /*
