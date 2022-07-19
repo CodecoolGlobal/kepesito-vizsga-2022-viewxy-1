@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
@@ -59,7 +57,8 @@ public class SeleniumTest extends TestBase {
         bootstrapModalPage = new BootstrapModalPage(driver);
         bootstrapModalPage.bootstrapModalNavigate();
         bootstrapModalPage.clickLaunchModalButton();
-        String expected = "";
+        Thread.sleep(500);
+        String expected = "This is the place where the content for the modal dialog displays";
         String actual = bootstrapModalPage.getAlertResult();
         Thread.sleep(500);
         bootstrapModalPage.clickCloseButton();
