@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+import java.util.Map;
+
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
     BasicSelectPage basicSelectPage;
@@ -70,6 +73,17 @@ public class SeleniumTest extends TestBase {
      */
     @Test
     public void NamecardTest() {
+        dataListFilterPage = new DataListFilterPage(driver);
+        dataListFilterPage.dataListFilterNavigate();
+        String[] expected = {"Tyreese Burn",
+                "Brenda Tree",
+                "Glenn Pho shizzle",
+                "Brian Hoyies",
+                "Glenn Pho shizzle",
+                "Arman Cheyia"};
+        String[] actual = dataListFilterPage.getNames();
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     /*
