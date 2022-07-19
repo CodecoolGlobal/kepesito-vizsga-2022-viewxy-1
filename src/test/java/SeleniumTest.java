@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
@@ -137,5 +139,12 @@ public class SeleniumTest extends TestBase {
                 "Michelle House";
 
         Assertions.assertEquals(expected, util.read());
+
+        try {
+            File deleteFile = new File(util.getFileName());
+            deleteFile.deleteOnExit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
