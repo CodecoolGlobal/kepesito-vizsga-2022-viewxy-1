@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Jul 19 11:00:03 GMT 2022","Tue Jul 19 11:00:04 GMT 2022","1234","","SeleniumTest","","SeleniumTest","SelectDayTest","SelectDayTest()",""
+"broken","Tue Jul 19 11:00:05 GMT 2022","Tue Jul 19 11:00:05 GMT 2022","245","","SeleniumTest","","SeleniumTest","AlertTest","AlertTest()",""
+"broken","Tue Jul 19 11:00:04 GMT 2022","Tue Jul 19 11:00:05 GMT 2022","298","","SeleniumTest","","SeleniumTest","TableTest","TableTest()",""
+"broken","Tue Jul 19 11:00:05 GMT 2022","Tue Jul 19 11:00:05 GMT 2022","241","","SeleniumTest","","SeleniumTest","TestInput","TestInput()",""
+"broken","Tue Jul 19 11:00:05 GMT 2022","Tue Jul 19 11:00:05 GMT 2022","229","","SeleniumTest","","SeleniumTest","NamecardTest","NamecardTest()",""
