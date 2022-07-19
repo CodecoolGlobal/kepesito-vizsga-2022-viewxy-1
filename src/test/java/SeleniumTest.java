@@ -138,12 +138,5 @@ public class SeleniumTest extends TestBase {
                 "Michelle House";
 
         Assertions.assertEquals(expected, util.read());
-
-        try {
-            File deleteFile = new File(util.getFileName());
-            deleteFile.deleteOnExit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
