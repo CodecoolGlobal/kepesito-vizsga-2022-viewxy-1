@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
@@ -92,7 +94,7 @@ public class SeleniumTest extends TestBase {
     @Test
     public void TableTest() {
         util = new Util();
-        String testFileName = "tableTestNames.txt";
+        String testFileName = "names.txt";
 
         tableDataDownloadPage = new TableDataDownloadPage(driver);
         tableDataDownloadPage.tableDataDownloadNavigate();
@@ -101,7 +103,7 @@ public class SeleniumTest extends TestBase {
 
 
         for (String actual : tableDataDownloadPage.getNames()) {
-            util.write(actual, System.lineSeparator());
+            util.write(actual, "\r\n");
         }
         String expected = "Tiger Nixon\r\n" +
                 "Garrett Winters\r\n" +
@@ -136,5 +138,12 @@ public class SeleniumTest extends TestBase {
                 "Michelle House";
 
         Assertions.assertEquals(expected, util.read());
+
+        try {
+            File deleteFile = new File(util.getFileName());
+            deleteFile.deleteOnExit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
