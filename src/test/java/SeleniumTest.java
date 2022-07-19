@@ -104,38 +104,38 @@ public class SeleniumTest extends TestBase {
 
 
         for (String actual : tableDataDownloadPage.getNames()) {
-            util.write(actual, "\r\n");
+            util.write(actual, "\n");
         }
-        String expected = "Tiger Nixon\r\n" +
-                "Garrett Winters\r\n" +
-                "Ashton Cox\r\n" +
-                "Cedric Kelly\r\n" +
-                "Airi Satou\r\n" +
-                "Brielle Williamson\r\n" +
-                "Herrod Chandler\r\n" +
-                "Rhona Davidson\r\n" +
-                "Colleen Hurst\r\n" +
-                "Sonya Frost\r\n" +
-                "Jena Gaines\r\n" +
-                "Quinn Flynn\r\n" +
-                "Charde Marshall\r\n" +
-                "Haley Kennedy\r\n" +
-                "Tatyana Fitzpatrick\r\n" +
-                "Michael Silva\r\n" +
-                "Paul Byrd\r\n" +
-                "Gloria Little\r\n" +
-                "Bradley Greer\r\n" +
-                "Dai Rios\r\n" +
-                "Jenette Caldwell\r\n" +
-                "Yuri Berry\r\n" +
-                "Caesar Vance\r\n" +
-                "Doris Wilder\r\n" +
-                "Angelica Ramos\r\n" +
-                "Gavin Joyce\r\n" +
-                "Jennifer Chang\r\n" +
-                "Brenden Wagner\r\n" +
-                "Fiona Green\r\n" +
-                "Shou Itou\r\n" +
+        String expected = "Tiger Nixon\n" +
+                "Garrett Winters\n" +
+                "Ashton Cox\n" +
+                "Cedric Kelly\n" +
+                "Airi Satou\n" +
+                "Brielle Williamson\n" +
+                "Herrod Chandler\n" +
+                "Rhona Davidson\n" +
+                "Colleen Hurst\n" +
+                "Sonya Frost\n" +
+                "Jena Gaines\n" +
+                "Quinn Flynn\n" +
+                "Charde Marshall\n" +
+                "Haley Kennedy\n" +
+                "Tatyana Fitzpatrick\n" +
+                "Michael Silva\n" +
+                "Paul Byrd\n" +
+                "Gloria Little\n" +
+                "Bradley Greer\n" +
+                "Dai Rios\n" +
+                "Jenette Caldwell\n" +
+                "Yuri Berry\n" +
+                "Caesar Vance\n" +
+                "Doris Wilder\n" +
+                "Angelica Ramos\n" +
+                "Gavin Joyce\n" +
+                "Jennifer Chang\n" +
+                "Brenden Wagner\n" +
+                "Fiona Green\n" +
+                "Shou Itou\n" +
                 "Michelle House";
 
         Assertions.assertEquals(expected, util.read());
