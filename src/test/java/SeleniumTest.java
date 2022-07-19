@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ public class SeleniumTest extends TestBase {
     BootstrapModalPage bootstrapModalPage;
     DataListFilterPage dataListFilterPage;
     TableDataDownloadPage tableDataDownloadPage;
+    Util util;
 
     /*
     Tölts be a böngészőbe az alábbi oldalt: https://demo.seleniumeasy.com/basic-first-form-demo.html
@@ -92,6 +94,50 @@ public class SeleniumTest extends TestBase {
      */
     @Test
     public void TableTest() {
-    }
+        util = new Util();
+        String testFileName = "tableTestNames.txt";
 
+        tableDataDownloadPage = new TableDataDownloadPage(driver);
+        tableDataDownloadPage.tableDataDownloadNavigate();
+
+        util.setFileName(testFileName);
+
+
+        for (String actual : tableDataDownloadPage.getNames()) {
+            util.write(actual, System.lineSeparator());
+        }
+        String expected = "Tiger Nixon\r\n" +
+                "Garrett Winters\r\n" +
+                "Ashton Cox\r\n" +
+                "Cedric Kelly\r\n" +
+                "Airi Satou\r\n" +
+                "Brielle Williamson\r\n" +
+                "Herrod Chandler\r\n" +
+                "Rhona Davidson\r\n" +
+                "Colleen Hurst\r\n" +
+                "Sonya Frost\r\n" +
+                "Jena Gaines\r\n" +
+                "Quinn Flynn\r\n" +
+                "Charde Marshall\r\n" +
+                "Haley Kennedy\r\n" +
+                "Tatyana Fitzpatrick\r\n" +
+                "Michael Silva\r\n" +
+                "Paul Byrd\r\n" +
+                "Gloria Little\r\n" +
+                "Bradley Greer\r\n" +
+                "Dai Rios\r\n" +
+                "Jenette Caldwell\r\n" +
+                "Yuri Berry\r\n" +
+                "Caesar Vance\r\n" +
+                "Doris Wilder\r\n" +
+                "Angelica Ramos\r\n" +
+                "Gavin Joyce\r\n" +
+                "Jennifer Chang\r\n" +
+                "Brenden Wagner\r\n" +
+                "Fiona Green\r\n" +
+                "Shou Itou\r\n" +
+                "Michelle House";
+
+        Assertions.assertEquals(expected, util.read());
+    }
 }
