@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class SeleniumTest extends TestBase {
     TwoInputFieldsPage twoInputFieldsPage;
+    BasicSelectPage basicSelectPage;
 
     /*
     Tölts be a böngészőbe az alábbi oldalt: https://demo.seleniumeasy.com/basic-first-form-demo.html
@@ -31,7 +32,15 @@ public class SeleniumTest extends TestBase {
      */
     @Test
     public void SelectDayTest() {
+        basicSelectPage = new BasicSelectPage(driver);
+        basicSelectPage.basicSelectNavigate();
+        basicSelectPage.clickDropDownList();
+        basicSelectPage.clickLastDay();
 
+        String expected = "Day selected :- Saturday";
+        String actual = basicSelectPage.checkSelectedDay();
+
+        Assertions.assertEquals(expected, actual);
     }
 
     /*
